@@ -88,7 +88,7 @@ function isCapitalCity (state, city) {
     let states = ['Texas', 'Alaska']
 }
 
-
+// I'm leavin ga comment taht I'm going to delete later.
 
     // let cities = ['Austin', 'Houston', 'Juneau', 'Strawberry']
     // let states = ['Texas', 'Alaska']
