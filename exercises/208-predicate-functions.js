@@ -21,11 +21,28 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 function isVowel (character) {
-    if (character == 'a' || 'e' || 'i' || 'o' || 'u') {
+    if (character == 'a') {
         return true
-    }else return false
+    } else if (character == 'e') {
+        return true
+    } else if (character == 'i') {
+        return true
+    } else if (character == 'o') {
+        return true
+    } else if (character == 'u') {
+        return true
+    } else if (character == 'A') {
+        return true
+    } else if (character == 'E') {
+        return true
+    } else if (character == 'I') {
+        return true
+    } else if (character == "O") {
+        return true
+    } else if (character == "U") {
+        return true
+    } else return false
 }
-
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
 // return true or false if the number is even or odd, respectively.
@@ -45,7 +62,9 @@ function isEven (number) {
     } else return false
 }
 function isOdd (number) {
-    if (number % 2 !== 0) {
+    if (number % 2 == 1) {
+        return true
+    } else if (number % 2 == -1) {
         return true
     } else return false
 }
@@ -58,12 +77,13 @@ function isOdd (number) {
 // Hint 1: What is the best data structure to store this information? Object? Array? etc.
 // Hint 2: This problem can be solved without using a "for" or "while" loop.
 //
-// Examples:
+// Examples:d
 // isCapitalCity('Texas', 'Austin') --> true
 // isCapitalCity('Texas', 'Houston') --> false
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
-function isCapitalCity (State, City) {
+
+function isCapitalCity (state, city) {
     let city = ['Austin', 'Houston', 'Juneau']
     let state = ['Texas', 'Alaska']
     if (city[0] = state[0]) {
