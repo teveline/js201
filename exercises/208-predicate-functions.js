@@ -84,12 +84,17 @@ function isOdd (number) {
 // isCapitalCity('Strawberry', 'Mango') --> false
 
 function isCapitalCity (state, city) {
-    let city = ['Austin', 'Houston', 'Juneau']
-    let state = ['Texas', 'Alaska']
-    if (city[0] = state[0]) {
-        return true
-    } else return false
-    if (city[2] = state[1]) {
-        return true
-    } else return false
+    let cities = ['Austin', 'Houston', 'Juneau', 'Strawberry']
+    let states = ['Texas', 'Alaska']
 }
+
+
+
+    // let cities = ['Austin', 'Houston', 'Juneau', 'Strawberry']
+    // let states = ['Texas', 'Alaska']
+    // if (cities[0] = states[0]) {
+    //     return true
+    // } else return false
+    // if (cities[2] = states[1]) {
+    //     return true
+    // } else return false
