@@ -21,6 +21,7 @@
 // isVowel(99) --> false
 // isVowel({e: 'Elephant'}) --> false
 function isVowel (character) {
+    // let vowel = ['A', 'a', 'E', ]
     if (character == 'a') {
         return true
     } else if (character == 'e') {
@@ -57,12 +58,14 @@ function isVowel (character) {
 // isOdd('7') --> false
 // isOdd(3.14) --> false
 function isEven (number) {
-    if (number % 2 == 0) {
+    if (number % 2 === 0 & typeof number == 'number') {
         return true
     } else return false
 }
+
 function isOdd (number) {
-    if (number % 2 == 1) {
+
+    if (number % 2 !== 0 && typeof number == 'number' && number % 2 == 1) {
         return true
     } else if (number % 2 == -1) {
         return true
@@ -85,11 +88,9 @@ function isOdd (number) {
 // isCapitalCity('Strawberry', 'Mango') --> false
 
 function isCapitalCity (state, city) {
-    let cities = ['Austin', 'Houston', 'Juneau', 'Strawberry']
-    let states = ['Texas', 'Alaska']
+    let cities = ['Austin', 'Houston', 'Juneau', 'Strawberry', "Nashville", "Memphis", "Buffalo", "New York"]
+    let states = ['Texas', 'Alaska', 'Tennessee', "New York"]
 }
-
-// I'm leavin ga comment taht I'm going to delete later.
 
     // let cities = ['Austin', 'Houston', 'Juneau', 'Strawberry']
     // let states = ['Texas', 'Alaska']
