@@ -22,28 +22,50 @@
 // isVowel({e: 'Elephant'}) --> false
 function isVowel (character) {
     // let vowel = ['A', 'a', 'E', ]
-    if (character == 'a') {
-        return true
-    } else if (character == 'e') {
-        return true
-    } else if (character == 'i') {
-        return true
-    } else if (character == 'o') {
-        return true
-    } else if (character == 'u') {
-        return true
-    } else if (character == 'A') {
-        return true
-    } else if (character == 'E') {
-        return true
-    } else if (character == 'I') {
-        return true
-    } else if (character == "O") {
-        return true
-    } else if (character == "U") {
-        return true
-    } else return false
+// 
+if (typeof character !== 'string') return false
+if (character.length !== 1) return false
+
+//const vowels = 'aeiou'.split(' ') <-- This works also to create the constant vowels.
+// rather than typing
+
+const vowels = ['a','e','i','o','u']
+const lowerCaseCharacter = character.toLowerCase()
+return vowels.includes(lowerCaseCharacter)
+
+function isVowel (char) {
+    return typeof char !== 'string' && //if the type of character is not a string -->false
+        char.length !== 1 && //if character length is not 1 --> false
+        'aeiou'.includes(char.toLowerCase()) !== -1 // the character when changed to lowercase
+        // must be included in the string 'aeiou'. the -1 just means not in the index.
 }
+}
+
+
+
+//My solution (Not the best)
+    // if (character == 'a') {
+    //     return true
+    // } else if (character == 'e') {
+    //     return true
+    // } else if (character == 'i') {
+    //     return true
+    // } else if (character == 'o') {
+    //     return true
+    // } else if (character == 'u') {
+    //     return true
+    // } else if (character == 'A') {
+    //     return true
+    // } else if (character == 'E') {
+    //     return true
+    // } else if (character == 'I') {
+    //     return true
+    // } else if (character == "O") {
+    //     return true
+    // } else if (character == "U") {
+    //     return true
+    // } else return false
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write two functions: "isEven" and "isOdd" that take a number argument and
 // return true or false if the number is even or odd, respectively.
@@ -57,6 +79,8 @@ function isVowel (character) {
 // isOdd(5) --> true
 // isOdd('7') --> false
 // isOdd(3.14) --> false
+
+//Solution 1: My solution
 function isEven (number) {
     if (number % 2 === 0 & typeof number == 'number') {
         return true
@@ -70,6 +94,15 @@ function isOdd (number) {
     } else if (number % 2 == -1) {
         return true
     } else return false
+}
+//Solution 2: From Class wit help from Chris
+function isInteger (number) {             //This is a predicate function that checks if a number is an integer
+    return typeof number === 'number' && number % 1 === 0 //if a number divided by 1 has a remainder of 0, its an integer.
+}
+
+function isOdd(number) {
+    return isInteger(number) &&
+    number % 2 !== 0
 }
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -87,70 +120,64 @@ function isOdd (number) {
 // isCapitalCity('Alaska', 'Juneau') --> true
 // isCapitalCity('Strawberry', 'Mango') --> false
 
-function isCapitalCity (state, city) {
-    states =[]
-    let capitals = {
-        Alabama: 'Montgomery',
-        Montana: 'Helena',
-        Alaska:    'Juneau',    
-        Nebraska: 'Lincoln',
-        Arizona: 'Phoenix',    
-        Nevada:    'Carson City',
-        Arkansas: 'Little Rock',    
-        'New Hampshire': 'Concord',
-        California:    'Sacramento',    
-        'New Jersey': 'Trenton',
-        Colorado: 'Denver',    
-        'New Mexico': 'Santa Fe',
-        Connecticut: 'Hartford',    
-        'New York': 'Albany',
-        Delaware: 'Dover',    
-        'North Carolina': 'Raleigh',
-        Florida: 'Tallahassee',    
-        'North Dakota': 'Bismarck',
-        Georgia: 'Atlanta',    
-        Ohio: 'Columbus',
-        Hawaii:    'Honolulu',    
-        Oklahoma: 'Oklahoma City',
-        Idaho: 'Boise',    
-        Oregon:    'Salem',
-        Illinois: 'Springfield',    
-        Pennsylvania: 'Harrisburg',
-        Indiana: 'Indianapolis',    
-        'Rhode Island': 'Providence',
-        Iowa: 'Des Moines',    
-        'South Carolina': 'Columbia',
-        Kansas:    'Topeka',    
-        'South Dakota': 'Pierre',
-        Kentucky: 'Frankfort',    
-        Tennessee: 'Nashville',
-        Louisiana: 'Baton Rouge',
-        Texas: 'Austin',
-        Maine: 'Augusta',
-        Utah: 'Salt Lake City',
-        Maryland: 'Annapolis',    
-        Vermont: 'Montpelier',
-        Massachusetts: 'Boston',    
-        Virginia: 'Richmond',
-        Michigan: 'Lansing',    
-        Washington:    'Olympia',
-        Minnesota:    'St. Paul',    
-        'West Virginia': 'Charleston',
-        Mississippi: 'Jackson',    
-        Wisconsin: 'Madison',
-        Missouri: 'Jefferson City',    
-        Wyoming: 'Cheyenne'
-    };
+let capitals = {
+    Alabama: 'Montgomery',
+    Montana: 'Helena',
+    Alaska:    'Juneau',    
+    Nebraska: 'Lincoln',
+    Arizona: 'Phoenix',    
+    Nevada:    'Carson City',
+    Arkansas: 'Little Rock',    
+    'New Hampshire': 'Concord',
+    California:    'Sacramento',    
+    'New Jersey': 'Trenton',
+    Colorado: 'Denver',    
+    'New Mexico': 'Santa Fe',
+    Connecticut: 'Hartford',    
+    'New York': 'Albany',
+    Delaware: 'Dover',    
+    'North Carolina': 'Raleigh',
+    Florida: 'Tallahassee',    
+    'North Dakota': 'Bismarck',
+    Georgia: 'Atlanta',    
+    Ohio: 'Columbus',
+    Hawaii:    'Honolulu',    
+    Oklahoma: 'Oklahoma City',
+    Idaho: 'Boise',    
+    Oregon:    'Salem',
+    Illinois: 'Springfield',    
+    Pennsylvania: 'Harrisburg',
+    Indiana: 'Indianapolis',    
+    'Rhode Island': 'Providence',
+    Iowa: 'Des Moines',    
+    'South Carolina': 'Columbia',
+    Kansas:    'Topeka',    
+    'South Dakota': 'Pierre',
+    Kentucky: 'Frankfort',    
+    Tennessee: 'Nashville',
+    Louisiana: 'Baton Rouge',
+    Texas: 'Austin',
+    Maine: 'Augusta',
+    Utah: 'Salt Lake City',
+    Maryland: 'Annapolis',    
+    Vermont: 'Montpelier',
+    Massachusetts: 'Boston',    
+    Virginia: 'Richmond',
+    Michigan: 'Lansing',    
+    Washington:    'Olympia',
+    Minnesota:    'St. Paul',    
+    'West Virginia': 'Charleston',
+    Mississippi: 'Jackson',    
+    Wisconsin: 'Madison',
+    Missouri: 'Jefferson City',    
+    Wyoming: 'Cheyenne'
+};
 
-    //Second Solution (didn't work) --> Tried from StackOverflow
-    let argState = String(state); 
-    if (capitals.hasOwnProperty(state) && city === capitals.argState){
-        return true
-    } else return false
+function isCapitalCity (state, city) {
     
-    //First solution (didn't work)
-    // if (argState in capitals && city === capitals.argState) {
-    //     return true
-    // } else return false
+if (capitals[state] === city) {
+    return true
+} else return false
+
 
 }
