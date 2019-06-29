@@ -95,11 +95,12 @@ function isOdd (number) {
         return true
     } else return false
 }
-//Solution 2: From Class wit help from Chris
+//Solution 2: From Class wit help from Chris 
 function isInteger (number) {             //This is a predicate function that checks if a number is an integer
     return typeof number === 'number' && number % 1 === 0 //if a number divided by 1 has a remainder of 0, its an integer.
-}
-
+} //Here we created a predicate function that checks whether a number is an integer so that
+  //We can pass it into the isOdd function.
+// Predicate functions are commonly solved with other predicate functions like isInteger
 function isOdd(number) {
     return isInteger(number) &&
     number % 2 !== 0
@@ -175,9 +176,10 @@ let capitals = {
 
 function isCapitalCity (state, city) {
     
-if (capitals[state] === city) {
-    return true
+if (capitals[state] === city) { //I had to use branch notation for capitals, because dot notation
+    return true                 // did not work. I couldn't use it in this instance. Why?
 } else return false
-
-
+//What it says here in English is if the condition is met, pass it as true, if not its false.
+//Another way of saying this is: if you pass state into capitals as a property it should return what
+// was entered as city. 
 }
