@@ -112,3 +112,5 @@ function totalAmount(billAmount, service) {
 function splitAmount (billAmount, service, numOfPeople) {
     return totalAmount(billAmount, service) / numOfPeople
 }
+//When you used totalAmount it initially didn't work because you didn't also attach the arguments that totalAmount
+// takes (billAmount, service)
