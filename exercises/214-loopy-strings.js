@@ -7,7 +7,11 @@
 //
 // Example:
 // reverse("skoob") --> "books"
-
+function reverse(string) {
+    string.split()
+    string.reverse()
+    console.log(string)
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

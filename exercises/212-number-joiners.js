@@ -14,7 +14,7 @@
 //     return numberJoinerString = numberJoinerString.slice(0,-1)
 // }
 
-
+let numberJoinerString = '';
 function numberJoinerWhile (startNum, endNum) {
     let numberJoinerString = '';
     if (typeof startNum === 'number' && typeof endNum === 'number') {
@@ -35,12 +35,21 @@ function numberJoinerWhile (startNum, endNum) {
 // 1. Be sure to place your accumulator outside of the for loop.
 // 2. Make sure only things that need to be strings are strings, in this example the idx
 // 3. Search for and use different classes for your variables
+// 4. The accumulator had to be inside of the function, but outside of the loop to "reset" each time
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
 // except using a "for" loop internally.
 
-
+function numberJoinerFor (startNum, endNum) {
+    let numberJoinerString = ''
+    if (typeof startNum === 'number' && typeof endNum === 'number') {
+        for (idx = startNum; idx <= endNum; idx++) {
+            numberJoinerString += idx + '_'
+        }
+        return numberJoinerString = numberJoinerString.slice(0, -1)
+    }
+}
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFancy" which does the same thing as "numberJoinerWhile",
@@ -50,3 +59,15 @@ function numberJoinerWhile (startNum, endNum) {
 // numberJoinerFancy(1, 10) --> '1_2_3_4_5_6_7_8_9_10'
 // numberJoinerFancy(1, 5, '~') --> 1~2~3~4~5
 // numberJoinerFancy(3, 6, '***BANANAS***') --> 1***BANANAS***2***BANANAS***3
+
+function numberJoinerFancy (startNum, endNum, separator) {
+    let numberJoinerString = ''
+    let stringSeparator = separator.string()
+    if (typeof startNum === 'number' && typeof endNum === 'number') {
+        for (idx = startNum; idx <= endNum; idx++) {
+            numberJoinerString += idx;
+            numberJoinerString += stringSeparator
+            }
+        return numberJoinerString = numberJoinerString.slice(0, -1)
+    }
+}
