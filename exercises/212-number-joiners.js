@@ -60,14 +60,19 @@ function numberJoinerFor (startNum, endNum) {
 // numberJoinerFancy(1, 5, '~') --> 1~2~3~4~5
 // numberJoinerFancy(3, 6, '***BANANAS***') --> 1***BANANAS***2***BANANAS***3
 
-function numberJoinerFancy (startNum, endNum, separator) {
+function numberJoinerFancy (startNum, endNum, separator = '_') {
     let numberJoinerString = ''
-    let stringSeparator = separator.string()
-    if (typeof startNum === 'number' && typeof endNum === 'number') {
+    if (typeof startNum === 'number' && typeof endNum === 'number' && typeof separator === 'string') {
         for (idx = startNum; idx <= endNum; idx++) {
             numberJoinerString += idx;
-            numberJoinerString += stringSeparator
+            numberJoinerString += separator
             }
-        return numberJoinerString = numberJoinerString.slice(0, -1)
+        return numberJoinerString.slice(0, -separator.length)
     }
 }
+
+// Lessons from this exercise:
+// 1. you can define a default argument to a property by using the "=" assign operator (ex. separator = '_').
+// 2. If you want an argument to pass as a certain type of value, such as a string, you need to specifically state that.
+//    ex. (typeof separator === 'string')
+// 3. You do not have to convert the value of an argument to a string. Just limit it by using a typeof
