@@ -75,4 +75,5 @@ function numberJoinerFancy (startNum, endNum, separator = '_') {
 // 1. you can define a default argument to a property by using the "=" assign operator (ex. separator = '_').
 // 2. If you want an argument to pass as a certain type of value, such as a string, you need to specifically state that.
 //    ex. (typeof separator === 'string')
-// 3. You do not have to convert the value of an argument to a string. Just limit it by using a typeof
+// 3. You do not have to convert the value of an argument to a string. Just limit it by using a typeof boolean expression.
+// 4. You can use .slice(->enter arguments here<-) to slice off parts of the return value.
