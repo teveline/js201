@@ -5,7 +5,36 @@
 // numberJoinerWhile(1, 10) --> '1_2_3_4_5_6_7_8_9_10'
 // numberJoinerWhile(12, 14) --> '12_13_14'
 
+// function numberJoinerWhile (startNum, endNum) {
+//     let numberJoinerString = ''
+//     for (idx = startNum; idx <= endNum; idx++) {
+//         numberJoinerString += idx
+//         numberJoinerString += '_'
+//     }
+//     return numberJoinerString = numberJoinerString.slice(0,-1)
+// }
 
+
+function numberJoinerWhile (startNum, endNum) {
+    let numberJoinerString = '';
+    if (typeof startNum === 'number' && typeof endNum === 'number') {
+        let idx = startNum;
+        while (idx <= endNum) {
+            numberJoinerString += idx
+            numberJoinerString += '_'
+            idx++
+        }
+        return numberJoinerString = numberJoinerString.slice(0,-1)
+
+    }
+}
+
+
+
+// Lessons:
+// 1. Be sure to place your accumulator outside of the for loop.
+// 2. Make sure only things that need to be strings are strings, in this example the idx
+// 3. Search for and use different classes for your variables
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "numberJoinerFor" which does the same thing as "numberJoinerWhile",
