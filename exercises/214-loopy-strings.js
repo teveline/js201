@@ -8,6 +8,24 @@
 // Example:
 // reverse("skoob") --> "books"
 
+// Solution 1
+function reverse(string) {
+    string.split('').reverse()
+}
+
+//Solution 2
+function reverse(string) {
+    let reversed = ''
+    for (idx = string.length - 1; idx >= 0; idx--) {
+        reversed += string[idx];
+    }
+    return reversed
+}
+
+// Lessons Learned:
+// 1. Make sure you always have a return value at the end of your function, otherwise it will return undefined.
+//    --> Javascript always returns a value, if you don't specify it will return undefined.
+
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "findLongestWord" that takes a string of words and returns
@@ -16,6 +34,19 @@
 //
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
+function findLongestWord (string) {
+    string = string.split(" ") //creates an array breaking at each empty space
+    let longestWord = ''        //This is the accumulator that changes in each iteration
+    for (idx = 0; idx < string.length; idx++) { //this is used to iterate through the array
+        if(string[idx].length > longestWord.length ) { //says that if the item in the string array is longer than longestWord...
+            longestWord = string[idx]       // then replace longestWord with that item in the string array.
+        }
+    }
+    return longestWord
+}
+//What I learned:
+// 1. I forgot to add the .length property to longestWord so it kept kicking back one of the first words.
+// 2. It was helpful to write out what was happening on a sheet of paper
 
 
 
