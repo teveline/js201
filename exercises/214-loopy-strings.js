@@ -34,6 +34,7 @@ function reverse(string) {
 //
 // Example:
 // findLongestWord('a book full of dogs') --> 'book'
+
 function findLongestWord (string) {
     string = string.split(" ") //creates an array breaking at each empty space
     let longestWord = ''        //This is the accumulator that changes in each iteration
@@ -59,7 +60,56 @@ function findLongestWord (string) {
 // nicer('mom get the heck in here and bring me a darn sandwich.')
 // > 'mom get the in here and bring me a sandwich.'
 
+// function nicer (sentence) {
+//     sentenceArray = sentence.split(' ') //turns the sentence into an array
+//     let niceSentence = '' // this is the accumulator that will hold the new sentence *changed to an array
+//     let badWords = ['heck', 'darn', 'dang', 'crappy'] // list of bad words
+//     for (idx = 0; idx < sentenceArray.length; idx++) {  //this iterates through the index of sentenceArray
+//         if (sentenceArray[idx] !== 'heck' || sentenceArray[idx] !== 'darn' ||    //this are the naughty words
+//             sentenceArray[idx] !== 'dang' || sentenceArray[idx] !== 'crappy') {  // it says to add them to the
+//                 niceSentence += sentenceArray[idx] + ' '       //new array if they are not these words
+//             }
+//     }
+//     return 'zzz' + niceSentence + 'zzz'
+// }
 
+
+
+//Didn't work. A nested for loop was not necessary
+// function nicer (sentenceString) {
+//     let sentenceArray = sentenceString.split(' ') //turns the sentence into an array (explodes the string into an array)
+//     let niceSentence = [] // this is the accumulator that will hold the new sentence *changed to an array
+//     let badWords = ['heck', 'darn', 'dang', 'crappy'] // list of bad words
+
+//     for (let idx = 0; idx < sentenceArray.length; idx++) {  //this iterates through the index of sentenceArray
+//         for (let idx2 = 0; idx2 < badWords.length; idx2++) { //this will iterate through the index of badwords
+//             if (sentenceArray[idx] !== badWords[idx2]) {  // 
+//                 niceSentence += sentenceArray[idx] + " "
+//                 // niceSentence.push(sentenceArray[idx]) //<-- didn't work "not a function"
+//                 // sentenceArray[idx].push(niceSentence) // <-- didn't work, "not a function"
+//                 // niceSentence += sentenceArray[idx]      //<-- This is not how to push a word to an array.
+//             }
+//         }
+//     }
+//     return niceSentence.join(' ')
+// }
+
+// From Chris' Solution
+function nicer (sentenceString) {
+    let sentenceArray = sentenceString.split(' ') //turns the sentence into an array (explodes the string into an array)
+    let niceSentence = [] // this is the accumulator that will hold the new sentence *changed to an array
+    let badWords = ['heck', 'darn', 'dang', 'crappy'] // list of bad words
+
+    for (let idx = 0; idx < sentenceArray.length; idx++) {  //this iterates through the index of sentenceArray
+            const wordFromString = sentenceArray[idx] //Defining a variable here to make more semantic sense.
+            if (!badWords.includes(wordFromString)) { //if the array of badwords DOESN'T include a word from string
+            niceSentence.push(wordFromString) //then push it the word from string to the nice sentence
+        }
+    }                                         // Exit the for loop
+    return niceSentence.join(' ') //return the niceSentence array joined back into a string separated by " "
+}
+
+ 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "capitalizeAll"
