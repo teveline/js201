@@ -199,9 +199,11 @@ function capitalizeAll (sentenceString) {
 
     }
     return newSentenceArray.join(' ') //This turns the new sentence array back into a string with a space in between each word.
-
    
 }
+
+//Later on you should try using the .map method which calls a function on every item
+// in an array and returns a new array with the results of calling that function.
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function called "split" that does the same thing as String.split
@@ -214,6 +216,20 @@ function capitalizeAll (sentenceString) {
 // split('APPLExxBANANAxxCHERRY', 'xx') --> ['APPLE', 'BANANA', 'CHERRY']
 // split('xyz', 'r') --> ['xyz']
 
-// function split(string, delimiter) {
+    //Strategy: Use a for loop to iterate through each character of the string and push that
+    // character to a new string.
+    // if the character at the string is the delimter, join the previous characters together
+    // and start a new item for the array. 
 
-// }
+//Stage 1 of Solution: Turns every character in the string into an item in an array
+function split (string, delimiter) {
+    let newStringArray = []
+    let itemArray = []
+    for (let idx = 0; idx < string.length; idx++) {
+    
+        let currentChar = string.charAt(idx)
+        newStringArray.push(currentChar)
+    
+    }
+    return newStringArray
+}
