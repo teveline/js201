@@ -233,3 +233,27 @@ function split (string, delimiter) {
     }
     return newStringArray
 }
+//Solution 1, looping through with .charAt(), Amanda's Solution
+    // Don't use charAt use a substring
+
+function split(string, delimiter) {
+    var results = []
+    var delimiterLength = delimiter.length
+    
+    for (var index = 0; index < string.length; index++) {
+        // let characters = string.substr(index, delimiterLength)
+        // let chunkStart
+        // let chunkEnd = 
+    console.log(characters, index)
+        
+    }
+}
+
+//Solution 2, using regular expressions (RegEx) to find and replace
+
+//Solution 3, While loop with index of delimiter on the string
+
+
+
+
+//Check out: https://dev.to/dhilipkmr/implementing-our-own-split-in-javascript-ii7 for one method to do this activity

@@ -432,12 +432,12 @@ function checkFactors () {
   const moduleFileName = '../' + moduleName('exercises/218-factors.js')
   let module = getModule(moduleFileName)
 
-  checkForFunction(filename, module, 'gcd')
-  it('"gcd" function implementation', function () {
-    assert.deepStrictEqual(module.gcd(5, 1), 1, 'gcd(5, 1) should return 1')
-    assert.deepStrictEqual(module.gcd(3, 15), 3, 'gcd(3, 15) should return 3')
-    assert.deepStrictEqual(module.gcd(50, 20), 10, 'gcd(50, 20) should return 10')
-  })
+  // checkForFunction(filename, module, 'gcd')
+  // it('"gcd" function implementation', function () {
+  //   assert.deepStrictEqual(module.gcd(5, 1), 1, 'gcd(5, 1) should return 1')
+  //   assert.deepStrictEqual(module.gcd(3, 15), 3, 'gcd(3, 15) should return 3')
+  //   assert.deepStrictEqual(module.gcd(50, 20), 10, 'gcd(50, 20) should return 10')
+  // })
 
   checkForFunction(filename, module, 'factors')
   it('"factors" function implementation', function () {
