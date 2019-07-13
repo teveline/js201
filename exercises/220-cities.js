@@ -7,9 +7,24 @@
 // ];
 // and returns a new array containing only those cities whose temperature is
 // cooler than 70 degrees.
-
+function coolCities (cityObject) {
+    coolCityArray = []
+    for (let idx = 0; idx < cityObject.length; idx++) {
+        if (cityObject[idx].temperature < 70) {
+            coolCityArray.push(cityObject[idx])
+        }
+    }
+    return coolCityArray
+}
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "cityNames" which takes an array of city objects like the
 // above problem and returns an array of the cities names.
+function cityNames (cityObject) {
+    let cityNameArray = []
+    for (let idx = 0; idx < cityObject.length; idx++) {
+        cityNameArray.push(cityObject[idx].name)
+    }
+    return cityNameArray
+}

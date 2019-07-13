@@ -31,6 +31,19 @@ function gcd (num1, num2) {
     return commonFactors
 }
 
+// Solution after research
+
+function gcd(num1, num2) {
+    let remainder
+    while((num1 % num2) > 0) {
+        remainder = num1 % num2
+        num1 = num2
+        num2 = remainder
+    }
+    return num2
+}
+//Explanation
+// https://guide.freecodecamp.org/algorithms/greatest-common-divisor-euclidean/
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

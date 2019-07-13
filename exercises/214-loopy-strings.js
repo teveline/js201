@@ -249,6 +249,7 @@ function split(string, delimiter) {
     }
 }
 
+
 //Solution 2, using regular expressions (RegEx) to find and replace
 
 //Solution 3, While loop with index of delimiter on the string
