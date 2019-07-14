@@ -34,7 +34,7 @@ function sumNumbers (numArr) { //the function sumNumbers takes an array as an ar
 // positives([-1, -2, -3]) --> []
 
 function positives (numArr) {
-    positiveArr = []
+    let positiveArr = []
     for (let i = 0; i < numArr.length; i++) {
         if (numArr[i] > 0) {
             positiveArr.push(numArr[i])
@@ -92,6 +92,7 @@ function integers (numArr) {
     }
     return intArr
 }
+// This solution makes an assumption that all numbers in numArr are >= 0.
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "squareDance" which takes an array of numbers and returns a

@@ -30,7 +30,6 @@ function numberJoinerWhile (startNum, endNum) {
 }
 
 
-
 // Lessons:
 // 1. Be sure to place your accumulator outside of the for loop.
 // 2. Make sure only things that need to be strings are strings, in this example the idx

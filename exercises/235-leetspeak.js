@@ -14,3 +14,16 @@
 // Examples:
 // leetspeak('Leet') --> "l337"
 // leetspeak('ORANGE') --> "0r4n63"
+
+function leetspeak (string) {
+    let leetspeakWord = ''
+    substitutions = {
+        A: 4,
+        E: 3,
+        G: 6,
+        I: 1,
+        O: 0,
+        S: 5,
+        T: 7
+    }
+}
