@@ -30,12 +30,12 @@
 
 function longLongVowels (word) {
     let vowels = 'aeiou' //Creates a string of vowels to check
-    let newWord = ''
+    let newWord = '' //empty string to accumulate to.
     for (let idx = 0; idx < word.length; idx++) {
       let character = word.charAt(idx)
-      let nextCharacter = word.charAt(idx + 1)
+      let nextCharacter = word.charAt(idx + 1) 
         if (vowels.includes(character) && character === nextCharacter) {
-            newWord += character.repeat(4)
+            newWord += character.repeat(4) //adds the repeated character to newWord
         } else newWord += character //adds character to the string newWord
     }
     return newWord
