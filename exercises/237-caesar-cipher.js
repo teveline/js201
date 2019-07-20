@@ -64,7 +64,7 @@ function cipher (string, shift) {
             } else return idxOfChar + shift
         }
         //Create a function that will input either the character that
-        //was entered as input or resetIndexOfChar(idxOfChar). 
+        //was entered as input or the new ciphered letter. 
         let cipherLetter = letters.charAt(resetIndexOfChar(idxOfChar))
 
         function charToNewString (character) {
@@ -83,6 +83,7 @@ function cipher (string, shift) {
     }
 
     return codedString
+
 }
 
 
