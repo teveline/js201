@@ -44,26 +44,36 @@
 
 function cipher (string, shift) {
 
-    if (shift < 0) {
-        cipher (string, shift + 26)
-    }
+    // if (shift < 0) {
+    //     cipher (string, shift + 26)
+    // }
 
     let letters = "abcdefghijklmnopqrstuvwxyz"
-    let smallString = string.toLowerCase()
-    let codedString = ''
+    let smallString = string.toLowerCase() //lowercases the entered string
+    let codedString = '' //accumulator
 
     for (let idx = 0; idx < string.length; idx++) {
 
-        let character = smallString.charAt(idx);
-        let idxOfChar = letters.indexOf(character)
+        let character = smallString.charAt(idx); //character definition
+        let idxOfChar = letters.indexOf(character) //idxOfChar definition
 
         //this function wraps the index back around to start at 0. 
-        let reset = function (idxOfChar) {
+        let resetIndexOfChar = function (idxOfChar) {
             if (idxOfChar + shift > 25) {
                 return idxOfChar += shift - 26
             } else return idxOfChar + shift
         }
-        let newChar = letters.charAt(reset(idxOfChar)) //Won't pass numbers b/c if not in the
+        //Create a function that will input either the character that
+        //was entered as input or resetIndexOfChar(idxOfChar). 
+        let cipherLetter = letters.charAt(resetIndexOfChar(idxOfChar))
+
+        function charToNewString (character) {
+            if (letters.includes(character)) {
+                return cipherLetter
+            } else return character
+        }
+
+        let newChar = charToNewString(character) //Won't pass numbers b/c if not in the
         // letters string it passes as "-1" causing all non letters to pass as a letter
         // once "shift" is added to it
 

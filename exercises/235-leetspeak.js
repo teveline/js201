@@ -30,14 +30,14 @@ function leetspeak (string) {
         S: 5,
         T: 7
     }
-    let keys = Object.keys(substitutions)
+    let keys = Object.keys(substitutions) //turns the keys of substitutions into an array
     for (let idx = 0; idx < string.length; idx++) {
         let character = bigString.charAt(idx)
-        if (keys.includes(character)) {
-            newWord += substitutions[character]
-        } else newWord += character
+        if (keys.includes(character)) { //looks to see if the character is in the array of keys
+            newWord += substitutions[character] //if it is it calls the value of that character and adds it to the new string
+        } else newWord += character //if not it just adds the character to to the new word
 
         }
     return newWord.toLowerCase()
 }
- 
+
