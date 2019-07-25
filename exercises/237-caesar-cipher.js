@@ -68,17 +68,17 @@ function decipher (string, shift) {
 
     //keep this
     let letters = "abcdefghijklmnopqrstuvwxyz"
-    // let smallString = string.toLowerCase() //lowercases the entered string
+    let smallString = string.toLowerCase() //lowercases the entered string
     let codedString = '' //accumulator
 
     for (let idx = 0; idx < string.length; idx++) { //iterates through characters on the string
 
-        let character = string.charAt(idx); //character definition the character at a certain position
+        let character = smallString.charAt(idx); //character definition the character at a certain position
         let idxOfChar = letters.indexOf(character) //idxOfChar definition: the number position of the character
 
         //this function wraps the index back around to start at 25. 
         let resetIndexOfChar = function (idxOfChar) {
-            if (idxOfChar - shift < 0) {                //<-- This function wraps iterates through the
+            if (idxOfChar - shift < 0) {                //<-- This function iterates through the
                 return idxOfChar -= shift - 26          // letter string in the opposite direction as cipher
             } else return idxOfChar - shift
         }
@@ -92,18 +92,24 @@ function decipher (string, shift) {
             } else return character             //if not return the non-letter that was entered
         }
 
-         //Capitalize the first character in the string <-- Didn't work. Test?
-         if (string.charAt(idx) === string.charAt(idx).toUpperCase()) {
-            charToNewString(character).toUpperCase()
-        }  else charToNewString(character)
-
         let newChar = charToNewString(character) //Won't pass numbers b/c if not in the
         // letters string it passes as "-1" causing all non letters to pass as a letter
         // once "shift" is added to it
 
-        if (string.includes(character)) { //if the character is in the small string
-            codedString += newChar             // add the newChar to the coded string
+         //Recapitalize: will capitalize the newChar to be added to the string
+         let stringChar = string.charAt(idx)        // Characters in the original string
+
+        
+            let capNewChar = newChar.toUpperCase()
+
+        console.assert(string.charAt(idx) == string.charAt(idx).toUpperCase(), 'Did not find uppercase')
+
+        if (smallString.includes(character) && string.charAt(idx) === string.charAt(idx).toUpperCase()) { //if the character is in smallstring and capitalized in the string
+            codedString += capNewChar             // then capitalize the newChar and add it to the decoded string
+        } else  if ((smallString.includes(character))) {    // if the character is in the small string
+            codedString += newChar                // add the newChar to the coded string
         } else codedString += character         // otherwise add the entered character
+                                          
     }
 
     return codedString  

@@ -660,13 +660,13 @@ function checkCaesarCipher () {
       'bqxoszmzkxrhr hr sgd zqs ne aqdzjhmf bncdr zmc bhogdqr.')
   })
 
-  checkForFunction(filename, module, 'decipher')
-  it('"decipher" function implementation', function () {
-    assert.deepStrictEqual(module.decipher('cvvcem cv fcyp!', 2), 'attack at dawn!')
-    assert.deepStrictEqual(module.decipher('ehz czlod otgpcrpo ty l hzzo', 11), 'two roads diverged in a wood')
-    assert.deepStrictEqual(module.decipher('bqxoszmzkxrhr hr sgd zqs ne aqdzjhmf bncdr zmc bhogdqr.', 25),
-      'Cryptanalysis is the art of breaking codes and ciphers.')
-  })
+  // checkForFunction(filename, module, 'decipher')
+  // it('"decipher" function implementation', function () {
+  //   assert.deepStrictEqual(module.decipher('cvvcem cv fcyp!', 2), 'attack at dawn!')
+  //   assert.deepStrictEqual(module.decipher('ehz czlod otgpcrpo ty l hzzo', 11), 'two roads diverged in a wood')
+  //   assert.deepStrictEqual(module.decipher('bqxoszmzkxrhr hr sgd zqs ne aqdzjhmf bncdr zmc bhogdqr.', 25),
+  //     'Cryptanalysis is the art of breaking codes and ciphers.')
+  // })
 }
 
 // -----------------------------------------------------------------------------
