@@ -21,7 +21,7 @@
 //         }
 // }
   
-// Attempt 2: Works in the bro
+// Attempt 2: Works
 function makeSquare(squareSize) {
     let square = ''
     let star = '*'
@@ -45,8 +45,20 @@ function makeSquare(squareSize) {
 // *    *
 // ******
 
-function makeBox() {
+function makeBox(width, height) {
+    let box = ''
+    let star = '*'
+    let emptySpace = ' '
 
+    for (let i = 0; i < height; i++) {
+        if (i === 0) {
+            box += star.repeat(width) + "\n"
+        } else if (i === height - 1) {
+            box += star.repeat(width)
+        } else  box += star + emptySpace.repeat(width - 2) + star + "\n"
+    }
+
+    return box
 }
 
 
