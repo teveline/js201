@@ -270,7 +270,7 @@ function checkPredicateFunctions () {
     assert.deepStrictEqual(module.isEven(-2), true, 'isEven(-2) should return true')
     assert.deepStrictEqual(module.isEven(1000), true, 'isEven(1000) should return true')
     assert.deepStrictEqual(module.isEven(99), false, 'isEven(99) should return false')
-    assert.deepStrictEqual(module.isEven('banana'), false, "isEven('banana) should return false")
+    assert.deepStrictEqual(module.isEven('banana'), false, "isEven('banana') should return false")
     assert.deepStrictEqual(module.isEven('8'), false, 'isEven("8") should return false ("8" is a string)')
     assert.deepStrictEqual(module.isEven([]), false, 'isEven([]) should return false')
   })
@@ -502,7 +502,7 @@ function checkCities () {
       "      'Los Angeles',\n" +
       "      'Atlanta',\n" +
       "      'Detroit'\n" +
-      "       'New York'\n" +
+      "      'New York'\n" +
       '    ]')
   })
 }
@@ -630,14 +630,14 @@ function checkLeetspeak () {
 
   checkForFunction(filename, module, 'leetspeak')
   it('"leetspeak" function implementation', function () {
-    assert.deepStrictEqual(module.leetspeak('Leet'), 'l337', "leetspeak('Leet') should return 'l337'")
-    assert.deepStrictEqual(module.leetspeak(''), '', "leetspeak('') should return '' (an empty string)")
     assert.deepStrictEqual(module.leetspeak('banana'), 'b4n4n4', "leetspeak('banana') should return 'b4n4n4'")
     assert.deepStrictEqual(module.leetspeak('kewl'), 'k3wl', "leetspeak('kewl') should return 'k3wl'")
     assert.deepStrictEqual(module.leetspeak('orange'), '0r4n63', "leetspeak('orange') should return '0r4n63'")
     assert.deepStrictEqual(module.leetspeak('ORANGE'), '0r4n63', "leetspeak('ORANGE') should return '0r4n63'")
+    assert.deepStrictEqual(module.leetspeak('Leet'), 'l337', "leetspeak('Leet') should return 'l337'")
     assert.deepStrictEqual(module.leetspeak('page'), 'p463', "leetspeak('page') should return 'p463'")
     assert.deepStrictEqual(module.leetspeak('silly'), '51lly', "leetspeak('silly') should return '51lly'")
+    assert.deepStrictEqual(module.leetspeak(''), '', "leetspeak('') should return '' (an empty string)")
   })
 }
 
@@ -652,21 +652,21 @@ function checkCaesarCipher () {
 
   checkForFunction(filename, module, 'cipher')
   it('"cipher" function implementation', function () {
-    assert.deepStrictEqual(module.cipher('Genius without education is like silver in the mine', 5),
+    assert.deepStrictEqual(module.cipher('genius without education is like silver in the mine', 5),
       'ljsnzx bnymtzy jizhfynts nx qnpj xnqajw ns ymj rnsj')
-    assert.deepStrictEqual(module.cipher('We hold these truths to be self-evident', 8),
+    assert.deepStrictEqual(module.cipher('we hold these truths to be self-evident', 8),
       'em pwtl bpmam bzcbpa bw jm amtn-mdqlmvb')
-    assert.deepStrictEqual(module.cipher('Cryptanalysis is the art of breaking codes and ciphers.', 25),
+    assert.deepStrictEqual(module.cipher('cryptanalysis is the art of breaking codes and ciphers.', 25),
       'bqxoszmzkxrhr hr sgd zqs ne aqdzjhmf bncdr zmc bhogdqr.')
   })
 
-  // checkForFunction(filename, module, 'decipher')
-  // it('"decipher" function implementation', function () {
-  //   assert.deepStrictEqual(module.decipher('cvvcem cv fcyp!', 2), 'attack at dawn!')
-  //   assert.deepStrictEqual(module.decipher('ehz czlod otgpcrpo ty l hzzo', 11), 'two roads diverged in a wood')
-  //   assert.deepStrictEqual(module.decipher('bqxoszmzkxrhr hr sgd zqs ne aqdzjhmf bncdr zmc bhogdqr.', 25),
-  //     'Cryptanalysis is the art of breaking codes and ciphers.')
-  // })
+  checkForFunction(filename, module, 'decipher')
+  it('"decipher" function implementation', function () {
+    assert.deepStrictEqual(module.decipher('cvvcem cv fcyp!', 2), 'attack at dawn!')
+    assert.deepStrictEqual(module.decipher('ehz czlod otgpcrpo ty l hzzo', 11), 'two roads diverged in a wood')
+    assert.deepStrictEqual(module.decipher('bqxoszmzkxrhr hr sgd zqs ne aqdzjhmf bncdr zmc bhogdqr.', 25),
+      'cryptanalysis is the art of breaking codes and ciphers.')
+  })
 }
 
 // -----------------------------------------------------------------------------

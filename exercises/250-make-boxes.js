@@ -8,9 +8,32 @@
 // *****
 // *****
 
-function makeSquare() {
-    
+// Attempt 1: Worked in Pythontutor, but did not pass tests or work in the browser
+// function makeSquare(squareSize) {
+//     let lineOfStars = ''
+
+//     for (let idx = 0; idx < squareSize; idx++) {            // 1st loop: For every # between 0 and the squareSize...
+//             for (let idx2 = 0; idx2 < squareSize; idx2++) {     // 2nd loop: cycle through the numbers between 0 and squareSize and
+//                 lineOfStars += '*'                              // add an * to the lineOfStars string
+//             }
+//             console.log(lineOfStars)                            // 1st loop: log the line of stars for the first loop
+//             lineOfStars = ''                                     // 2nd loop: reset line of Stars to an empty string
+//         }
+// }
+  
+// Attempt 2: Works in the bro
+function makeSquare(squareSize) {
+    let square = ''
+    let star = '*'
+
+    for (let i = 0; i < squareSize; i++) {
+        if (i < squareSize - 1) {
+            square += star.repeat(squareSize) + '\n'
+        }else square += star.repeat(squareSize)
+    }
+    return square
 }
+    
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Write a function "makeBox" which is given a width and height and returns a

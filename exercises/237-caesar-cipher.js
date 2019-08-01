@@ -102,8 +102,6 @@ function decipher (string, shift) {
         
             let capNewChar = newChar.toUpperCase()
 
-        console.assert(string.charAt(idx) == string.charAt(idx).toUpperCase(), 'Did not find uppercase')
-
         if (smallString.includes(character) && string.charAt(idx) === string.charAt(idx).toUpperCase()) { //if the character is in smallstring and capitalized in the string
             codedString += capNewChar             // then capitalize the newChar and add it to the decoded string
         } else  if ((smallString.includes(character))) {    // if the character is in the small string
