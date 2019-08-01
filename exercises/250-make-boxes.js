@@ -51,11 +51,13 @@ function makeBox(width, height) {
     let emptySpace = ' '
 
     for (let i = 0; i < height; i++) {
-        if (i === 0) {
-            box += star.repeat(width) + "\n"
-        } else if (i === height - 1) {
-            box += star.repeat(width)
-        } else  box += star + emptySpace.repeat(width - 2) + star + "\n"
+        if (i === 0) {                       // if on the first row...
+            box += star.repeat(width)        // add the entire width of *'s   
+        } else if (i === height - 1) {       // if on the last row...
+            box += '\n' + star.repeat(width)        // go to next line then add the width of *'s
+        } else box += '\n' + star + emptySpace.repeat(width - 2) + star
+        //Any other time go to the next line then add spaces surrounded by *'s and
+        // then go to the next line
     }
 
     return box
@@ -72,6 +74,34 @@ function makeBox(width, height) {
 // * Welcome to DigitalCrafts *
 // ****************************
 
-function makeBanner() {
+function makeBanner(text) {
+    let banner = ''
+    let star = '*'
 
+    for (let i = 0; i < 3; i++) {
+        if (i === 0) {
+            banner += star.repeat(text.length + 4)
+        } else if (i < 2) {
+            banner += '\n' + star + ' ' + text + ' ' + star
+        } else banner += '\n' + star.repeat(text.length + 4)
+    }
+    return banner
+}
+
+function makeBox(width, height) {
+    let box = ''
+    let star = '*'
+    let emptySpace = ' '
+
+    for (let i = 0; i < height; i++) {
+        if (i === 0) {                       // if on the first row...
+            box += star.repeat(width)        // add the entire width of *'s   
+        } else if (i === height - 1) {       // if on the last row...
+            box += '\n' + star.repeat(width)        // go to next line then add the width of *'s
+        } else box += '\n' + star + emptySpace.repeat(width - 2) + star
+        //Any other time go to the next line then add spaces surrounded by *'s and
+        // then go to the next line
+    }
+
+    return box
 }

@@ -23,3 +23,9 @@
 //   [null, 'X', 'X']
 //   ])
 // null
+
+function ticTacToe (array) {
+
+
+    return winner
+}
