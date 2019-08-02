@@ -25,6 +25,9 @@
 // null
 
 function ticTacToe (array) {
+    let playerX = 'X'
+    let playerO = 'O'
+    let noMark = null
 
 
     return winner
