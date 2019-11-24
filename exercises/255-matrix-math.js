@@ -27,6 +27,7 @@ function matrixAdd (m1, m2) {
 // It should return the result of matrix multiplication of the two matricies.
 // What is matrix multiplication? https://tinyurl.com/j6jgh2u
 //
+
 // Example:
 // > matrixMultiply([[2, 4], [3, 4]], [[5, 2], [3, 1]])
 // [ [22,  8], [27, 10] ]
