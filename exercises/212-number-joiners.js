@@ -76,3 +76,4 @@ function numberJoinerFancy (startNum, endNum, separator = '_') {
 //    ex. (typeof separator === 'string')
 // 3. You do not have to convert the value of an argument to a string. Just limit it by using a typeof boolean expression.
 // 4. You can use .slice(->enter arguments here<-) to slice off parts of the return value.
+// 5. 
